@@ -47,4 +47,7 @@ async loadFavorites() {
     
   }
 }
+articlesInFavorites(article:Article){
+  return !!this._localArticles.find(localArticle=>localArticle.title===article.title);
+}
 }

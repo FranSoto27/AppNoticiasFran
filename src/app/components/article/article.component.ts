@@ -30,6 +30,8 @@ export class ArticleComponent implements OnInit {
   }
   async openMenu()
   {
+    const inFavorites = this.storageService.articlesInFavorites(this.article)
+
     const actionSheet = await this.actionSheetCtrl.create(
     {
       header:'options',
@@ -40,8 +42,8 @@ export class ArticleComponent implements OnInit {
           handler: ()=> this.shareArticle()
         },
         {
-          text:'Favorites',
-          icon:'heart-outline',
+          text: inFavorites ? 'Remove Favorites' : 'Favorites',
+          icon: inFavorites ? 'heart' : 'heart-outline',
           handler: ()=> this.onToggleFavorite()
         },
         {
