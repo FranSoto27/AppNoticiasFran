@@ -13,7 +13,7 @@
     </ion-toolbar>
   </ion-header>
     <ion-segment [value]="selectedCategory" (ionChange)="segmentChanged($event)" mode="md" scrollable="true">
-      <ion-segment-button [value]="pizza" *ngFor="let category of categories">
+      <ion-segment-button [value]="category" *ngFor="let category of categories">
         <ion-label>{{category}}</ion-label>
       </ion-segment-button>
     </ion-segment>
@@ -22,5 +22,4 @@
       <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
       </ion-infinite-scroll-content>
     </ion-infinite-scroll>
-  <app-explore-container name="Tab 2 page"></app-explore-container>
 </ion-content>
